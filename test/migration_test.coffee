@@ -2,6 +2,8 @@ juggling = require('../index')
 Schema = juggling.Schema
 Text = Schema.Text
 
+return if process.env.ONLY && (['mysql', 'postgres', 'sqlite3'].indexOf(process.env.ONLY) == -1)
+
 DBNAME = process.env.DBNAME || 'myapp_test'
 DBUSER = process.env.DBUSER || 'root'
 DBPASS = ''
